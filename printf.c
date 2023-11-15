@@ -3,18 +3,13 @@
 /**
  * _printf - is a function that selects the correct function to print.
  * @format: identifier to look for.
- * Return: the length of the string.
+ * Return: integer.
  */
 int _printf(const char * const format, ...)
 {
-	convert m[] = {
-		{"%s", print_s}, {"%c", print_char},
-		{"%%", print_37},
-		{"%i", print_int}, {"%d", print_d}, {"%r", print_revs},
-		{"%R", print_rot13}, {"%b", print_bin},
-		{"%u", print_unsigned},
-		{"%o", print_octal}, {"%x", print_hex}, {"%X", print_caphex},
-		{"%S", print_diff_string}, {"%p", print_pointer}
+	int len = 0;
+	match m[] = {
+		{"%s", printf_string}, {"%c", printf_char},{"%%", print_37},{"%i", print_int}, {"%d", print_dec}, {"%r", print_revs}, {"%R", print_rot13}, {"%b", print_bin},{"%u", print_unsigned},{"%o", print_octal}, {"%x", print_hex}, {"%X", print_caphex},{"%S", print_diff_string}, {"%p", print_pointer}
 	};
 
 	va_list args;
@@ -25,7 +20,7 @@ int _printf(const char * const format, ...)
 		return (-1);
 
 Here:
-	while (format[i] = '\0')
+	while (format[i] != '\0')
 	{
 		j = 13;
 		while (j >= 0)
@@ -43,5 +38,5 @@ Here:
 		i++;
 	}
 	va_end(args);
-	return (length);
+	return (len);
 }

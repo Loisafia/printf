@@ -5,7 +5,7 @@
  * Return: counter
  *
  */
-int print_rot13(va_list val)
+int print_rot13(va_list args)
 {
 	int i, j, counter = 0;
 	int k = 0;

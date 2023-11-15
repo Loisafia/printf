@@ -28,7 +28,7 @@ int print_bin(va_list val)
 	}
 	if (count == 0)
 	{
-		cont++;
+		count++;
 		_putchar('0');
 	}
 	return (count);

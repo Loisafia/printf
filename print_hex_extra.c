@@ -20,8 +20,6 @@ int print_hex_extra(unsigned long int num)
 	}
 	counter++;
 	array = malloc(counter * sizeof(int));
-		if (array == NULL)
-		return (NULL);
 
 	for (i = 0; i < counter; i++)
 	{
